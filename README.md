@@ -1,6 +1,6 @@
 # My LeetCode
 
-[![Build Status](https://www.travis-ci.org/MrHuxu/leetcode.svg?branch=master)](https://www.travis-ci.org/MrHuxu/leetcode)
+[![Build Status](https://www.travis-ci.org/rover5056/leetcode.svg?branch=master)](https://www.travis-ci.org/rover5056/leetcode)
 
 ## Description
 This is the repo of my LeetCode solutions. All of questions were solved by JavaScript,and every problems in this list was accepted.
@@ -27,30 +27,30 @@ This is the repo of my LeetCode solutions. All of questions were solved by JavaS
 
 
 [1]: https://leetcode.com/problems/two-sum
-[2]: https://github.com/MrHuxu/leetcode/blob/master/problems/001_two-sum/index.js
+[2]: https://github.com/rover5056/leetcode/blob/master/problems/001_two-sum/index.js
 [3]: https://leetcode.com/problems/add-two-numbers
-[4]: https://github.com/MrHuxu/leetcode/blob/master/problems/002_add-two-numbers/index.js
+[4]: https://github.com/rover5056/leetcode/blob/master/problems/002_add-two-numbers/index.js
 [5]: https://leetcode.com/problems/longest-substring-without-repeating-characters
-[6]: https://github.com/MrHuxu/leetcode/blob/master/problems/003_longest-substring-without-repeating-characters/index.js
+[6]: https://github.com/rover5056/leetcode/blob/master/problems/003_longest-substring-without-repeating-characters/index.js
 [9]: https://leetcode.com/problems/longest-palindromic-substring
-[10]: https://github.com/MrHuxu/leetcode/blob/master/problems/005_longest-palindromic-substring/index.js
+[10]: https://github.com/rover5056/leetcode/blob/master/problems/005_longest-palindromic-substring/index.js
 [11]: https://leetcode.com/problems/zigzag-conversion
-[12]: https://github.com/MrHuxu/leetcode/blob/master/problems/006_zigzag-conversion/index.js
+[12]: https://github.com/rover5056/leetcode/blob/master/problems/006_zigzag-conversion/index.js
 [13]: https://leetcode.com/problems/reverse-integer
-[14]: https://github.com/MrHuxu/leetcode/blob/master/problems/007_reverse-integer/index.js
+[14]: https://github.com/rover5056/leetcode/blob/master/problems/007_reverse-integer/index.js
 [15]: https://leetcode.com/problems/string-to-integer-atoi
-[16]: https://github.com/MrHuxu/leetcode/blob/master/problems/008_string-to-integer-atoi/index.js
+[16]: https://github.com/rover5056/leetcode/blob/master/problems/008_string-to-integer-atoi/index.js
 [17]: https://leetcode.com/problems/palindrome-number
-[18]: https://github.com/MrHuxu/leetcode/blob/master/problems/009_palindrome-number/index.js
+[18]: https://github.com/rover5056/leetcode/blob/master/problems/009_palindrome-number/index.js
 [19]: https://leetcode.com/problems/regular-expression-matching
-[20]: https://github.com/MrHuxu/leetcode/blob/master/problems/010_regular-expression-matching/index.js
+[20]: https://github.com/rover5056/leetcode/blob/master/problems/010_regular-expression-matching/index.js
 [21]: https://leetcode.com/problems/container-with-most-water
-[22]: https://github.com/MrHuxu/leetcode/blob/master/problems/011_container-with-most-water/index.js
+[22]: https://github.com/rover5056/leetcode/blob/master/problems/011_container-with-most-water/index.js
 [23]: https://leetcode.com/problems/integer-to-roman
-[24]: https://github.com/MrHuxu/leetcode/blob/master/problems/012_integer-to-roman/index.js
+[24]: https://github.com/rover5056/leetcode/blob/master/problems/012_integer-to-roman/index.js
 [25]: https://leetcode.com/problems/roman-to-integer
-[26]: https://github.com/MrHuxu/leetcode/blob/master/problems/013_roman-to-integer/index.js
+[26]: https://github.com/rover5056/leetcode/blob/master/problems/013_roman-to-integer/index.js
 [27]: https://leetcode.com/problems/longest-common-prefix
-[28]: https://github.com/MrHuxu/leetcode/blob/master/problems/014_longest-common-prefix/index.js
+[28]: https://github.com/rover5056/leetcode/blob/master/problems/014_longest-common-prefix/index.js
 [29]: https://leetcode.com/problems/3sum
-[30]: https://github.com/MrHuxu/leetcode/blob/master/problems/015_3sum/index.js
+[30]: https://github.com/rover5056/leetcode/blob/master/problems/015_3sum/index.js
