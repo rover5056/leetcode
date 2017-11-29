@@ -1,13 +1,21 @@
 /**
- * Problem: https://leetcode.com/problems/palindrome-number/description/
- */
-/**
  * @param {number} x
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-  var str = x.toString();
-  return str === str.split('').reverse().join('');
-};
 
-module.exports = isPalindrome;
+    if (x < 0) {
+        return false
+    }
+    x = Math.abs(x).toString();
+
+    for (var i = 0, j = x.length - 1; i < x.length / 2; i++, j--) {
+        if (x[i] == x[j]) {
+            continue
+        } else {
+            return false
+        }
+    }
+    return true
+
+};

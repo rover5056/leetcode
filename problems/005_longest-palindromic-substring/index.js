@@ -1,39 +1,51 @@
-/**
- * Problem: https://leetcode.com/problems/longest-palindromic-substring/description/
- */
-/**
- * @param {string} s
- * @return {string}
- */
-var getLongestPalindrome = function (st, ed, str) {
-  if (0 === st || ed === str.length - 1) {
-    return [st, ed];
-  } else {
-    while (st > 0 && ed < str.length - 1 && str[st] === str[ed]) {
-      st--;
-      ed++;
-    }
-    return str[st] === str[ed] ? [st, ed] : [st + 1, ed - 1];
-  }
-};
-
 var longestPalindrome = function(s) {
-  var max = 1, longestStr = s[0], result;
-  for (var i = 0, l = s.length; i < l; i++) {
-    if (s[i + 1] && s[i] === s[i + 1]) {
-      result = getLongestPalindrome(i, i + 1, s);
-      flag = (result[1] - result[0] + 1) > max;
-      max = flag ? result[1] - result[0] + 1 : max;
-      longestStr = flag ? s.slice(result[0], result[1] + 1) : longestStr;
-    }
-    if (s[i + 1] && s[i - 1] && s[i + 1] === s[i - 1]) {
-      result = getLongestPalindrome(i - 1, i + 1, s);
-      flag = (result[1] - result[0] + 1) > max;
-      max = flag ? result[1] - result[0] + 1 : max;
-      longestStr = flag ? s.slice(result[0], result[1] + 1) : longestStr;
-    }
-  }
-  return longestStr;
-};
+    var max_len = 0;
+    var len = s.length;
+    var str = '',
+        max_str = '';
 
-module.exports = longestPalindrome;
+    if (len == 1) {
+        return s
+    }
+    if (len == 2 && s[0] == s[1]) {
+        return s
+    }
+
+    for (var i = 1; i < len; i++) {
+        str = s[i];
+        for (var j = 1; j <= i; j++) {
+            if (s[i - j] == s[i + j]) {
+                str = s.substring(i - j, i + j + 1)
+                if (j * 2 + 1 >= max_len) {
+                    max_str = str
+                    max_len = j * 2 + 1
+                }
+
+                // max_len = j * 2 + 1 < max_len ? max_len : j * 2 + 1
+            } else {
+                break
+            }
+        }
+
+    }
+
+
+    for (var i = 1; i < len; i++) {
+        str = s[i];
+        for (var j = 1; j <= i; j++) {
+            if (s[i - j] == s[i + j - 1]) {
+                str = s.substring(i - j, i + j)
+                if (j * 2 + 1 > max_len) {
+                    max_str = str
+                    max_len = j * 2 + 1
+                }
+
+
+            } else {
+                break
+            }
+        }
+
+    }
+    return max_str ? max_str : s[0]
+};

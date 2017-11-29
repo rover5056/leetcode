@@ -1,54 +1,44 @@
-/**
- * Problem: https://leetcode.com/problems/regular-expression-matching/description/
- */
-/**
- * @param {string} s
- * @param {string} p
- * @return {boolean}
- */
-var isMatch = function(s, p) {
-  let patterns = [];
+function isMatch(s, p) {
+    /**
+     * f[i][j]: if s[0..i-1] matches p[0..j-1]
+     * if p[j - 1] != '*'
+     *      f[i][j] = f[i - 1][j - 1] && s[i - 1] == p[j - 1]
+     * if p[j - 1] == '*', denote p[j - 2] with x
+     *      f[i][j] is true iff any of the following is true
+     *      1) "x*" repeats 0 time and matches empty: f[i][j - 2]
+     *      2) "x*" repeats >= 1 times and matches "x*x": s[i - 1] == x && f[i - 1][j]
+     * '.' matches any single character
+     */
+    var m = s.length,
+        n = p.length;
+    // vector<vector<bool>> f(m + 1, vector<bool>(n + 1, false));
 
-  for (let i = 0; i < p.length; ++i) {
-    if ('*' === p[i]) {
-      patterns[patterns.length - 1].unlimit = true;
-    } else {
-      patterns.push({ ch: p[i] });
-    }
-  }
+    var f = []
+    for (var k = 0; k <= m; k++) {
 
-  if (
-    patterns.length &&
-    ((!patterns[0].unlimit && patterns[0].ch !== s[0] && patterns[0].ch !== '.') ||
-    (!patterns[patterns.length - 1].unlimit && patterns[patterns.length - 1].ch !== s[s.length - 1] && patterns[patterns.length - 1].ch !== '.'))
-  ) {
-    return false;
-  }
+        f[k] = Array.from({ length: n }, (v, i) => 0);;
 
-  let result = false;
-  const traverse = (i, j) => {
-    if (i === s.length) {
-      while (patterns[j] && patterns[j].unlimit) ++j;
-      if (j === patterns.length) {
-        result = true;
-        return;
-      }
+
     }
 
-    if (result || j === patterns.length) return;
-
-    if (s[i] && patterns[j] && (s[i] === patterns[j].ch || '.' === patterns[j].ch)) {
-      traverse(i + 1, j + 1);
-      if (patterns[j].unlimit) {
-        traverse(i + 1, j);
-        traverse(i, j + 1);
-      }
-    } else if (patterns[j].unlimit) {
-      traverse(i, j + 1);
+    f[0][0] = true;
+    for (var i = 1; i <= m; i++) {
+        f[i][0] = false;
     }
-  };
-  traverse(0, 0);
 
-  return result;
-};
-module.exports = isMatch;
+    // p[0.., j - 3, j - 2, j - 1] matches empty iff p[j - 1] is '*' and p[0..j - 3] matches empty
+    for (var j = 1; j <= n; j++) {
+        f[0][j] = j > 1 && '*' == p[j - 1] && f[0][j - 2];
+    }
+
+
+    for (var i = 1; i <= m; i++)
+        for (var j = 1; j <= n; j++)
+            if (p[j - 1] != '*')
+                f[i][j] = f[i - 1][j - 1] && (s[i - 1] == p[j - 1] || '.' == p[j - 1]);
+            else
+            // p[0] cannot be '*' so no need to check "j > 1" here
+                f[i][j] = f[i][j - 2] || (s[i - 1] == p[j - 2] || '.' == p[j - 2]) && f[i - 1][j];
+
+    return f[m][n];
+}
