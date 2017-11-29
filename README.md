@@ -1,6 +1,5 @@
 # My LeetCode
 
-[![Build Status](https://www.travis-ci.org/rover5056/leetcode.svg?branch=master)](https://www.travis-ci.org/rover5056/leetcode)
 
 ## Description
 This is the repo of my LeetCode solutions. All of questions were solved by JavaScript,and every problems in this list was accepted.
